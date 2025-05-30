@@ -1,0 +1,233 @@
+{
+	"info": {
+		"_postman_id": "6742cfda-7334-4e49-affa-16c6e71c938e",
+		"name": "et_app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24499138"
+	},
+	"item": [
+		{
+			"name": "Health Check",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "localhost:5000/api/health",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login Request",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"email\":\"email@example.com\",\"password\":\"password\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4Mzk2MDk0YTJjMjZlZDA1YmQ5NDhkMiIsImlhdCI6MTc0ODU5MTU0MywiZXhwIjoxNzQ5MTk2MzQzfQ.nMHmjG-YP-n35Vy9fv7mjQFVwO5SRqOGCMTD3SdU9l8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/api/auth/profile",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"auth",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read all stations",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/api/stations",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"stations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Station",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4Mzk2MDk0YTJjMjZlZDA1YmQ5NDhkMiIsImlhdCI6MTc0ODU5MTU0MywiZXhwIjoxNzQ5MTk2MzQzfQ.nMHmjG-YP-n35Vy9fv7mjQFVwO5SRqOGCMTD3SdU9l8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\": \"Station 1\", \"location\":{\"lat\": 28.638686, \"lng\": 77.071730},\"status\": \"active\",\"powerOutput\": 200,\"connectorType\": \"Type2\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/stations/create",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"stations",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Station",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4Mzk2MDk0YTJjMjZlZDA1YmQ5NDhkMiIsImlhdCI6MTc0ODU5MTU0MywiZXhwIjoxNzQ5MTk2MzQzfQ.nMHmjG-YP-n35Vy9fv7mjQFVwO5SRqOGCMTD3SdU9l8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\": \"Station 0\", \"location\":{\"lat\": 28.638686, \"lng\": 77.071730},\"status\": \"inactive\",\"powerOutput\": 200,\"connectorType\": \"Type2\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/stations/update/68396b6ea97e6a287e503c7d",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"stations",
+						"update",
+						"68396b6ea97e6a287e503c7d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Station",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4Mzk2MDk0YTJjMjZlZDA1YmQ5NDhkMiIsImlhdCI6MTc0ODU5MTU0MywiZXhwIjoxNzQ5MTk2MzQzfQ.nMHmjG-YP-n35Vy9fv7mjQFVwO5SRqOGCMTD3SdU9l8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/api/stations/delete/68396b6ea97e6a287e503c7d",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"stations",
+						"delete",
+						"68396b6ea97e6a287e503c7d"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
