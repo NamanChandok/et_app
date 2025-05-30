@@ -68,11 +68,7 @@ const updateStation = async (req, res) => {
       });
     }
 
-    // Check if user owns the station or is admin
-    if (
-      station.createdBy.toString() !== req.user._id.toString() &&
-      req.user.role !== "admin"
-    ) {
+    if (station.createdBy.toString() !== req.user._id.toString()) {
       return res.status(403).json({
         success: false,
         message: "Not authorized to update this station",
@@ -114,11 +110,7 @@ const deleteStation = async (req, res) => {
       });
     }
 
-    // Check if user owns the station or is admin
-    if (
-      station.createdBy.toString() !== req.user._id.toString() &&
-      req.user.role !== "admin"
-    ) {
+    if (station.createdBy.toString() !== req.user._id.toString()) {
       return res.status(403).json({
         success: false,
         message: "Not authorized to delete this station",

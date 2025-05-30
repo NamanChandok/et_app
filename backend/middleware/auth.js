@@ -37,16 +37,4 @@ const verifyToken = async (req, res, next) => {
   }
 };
 
-// Admin middleware
-const requireAdmin = (req, res, next) => {
-  if (req.user && req.user.role === "admin") {
-    next();
-  } else {
-    res.status(403).json({
-      success: false,
-      message: "Admin access required",
-    });
-  }
-};
-
-module.exports = { verifyToken, requireAdmin };
+module.exports = { verifyToken };
