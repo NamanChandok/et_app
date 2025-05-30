@@ -19,7 +19,7 @@ const getStations = async (req, res) => {
     res.status(500).json({
       success: false,
       message: "Failed to get stations",
-      error: process.env.NODE_ENV === "development" ? error.message : {},
+      error: error.message,
     });
   }
 };
@@ -49,7 +49,7 @@ const createStation = async (req, res) => {
     res.status(500).json({
       success: false,
       message: "Failed to create station",
-      error: process.env.NODE_ENV === "development" ? error.message : {},
+      error: error.message,
     });
   }
 };
@@ -91,7 +91,7 @@ const updateStation = async (req, res) => {
     res.status(500).json({
       success: false,
       message: "Failed to update station",
-      error: process.env.NODE_ENV === "development" ? error.message : {},
+      error: error.message,
     });
   }
 };
@@ -128,7 +128,7 @@ const deleteStation = async (req, res) => {
     res.status(500).json({
       success: false,
       message: "Failed to delete station",
-      error: process.env.NODE_ENV === "development" ? error.message : {},
+      error: error.message,
     });
   }
 };
