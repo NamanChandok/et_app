@@ -14,7 +14,7 @@ const generateToken = (id) => {
 // @access  Public
 const register = async (req, res) => {
   try {
-    const { username, email, password } = req.body;
+    const { username, email, password, c_password } = req.body;
 
     // Check if user already exists
     const existingUser = await User.findOne({
@@ -25,6 +25,13 @@ const register = async (req, res) => {
       return res.status(400).json({
         success: false,
         message: "User with this email or username already exists",
+      });
+    }
+
+    if (password != c_password) {
+      return res.status(400).json({
+        success: false,
+        message: "Passwords do not match",
       });
     }
 
