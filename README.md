@@ -2,16 +2,12 @@
 
 A full-stack application to manage EV charging stations using **Node.js**, **Express**, **MongoDB**, and **Vue.js**. Includes user authentication, CRUD operations, filtering, and map integration using Google Maps. Built as an assignment for a Full Stack Development internship application.
 
----
-
 ## 📦 Project Structure
 ```bash
 ├── backend/ # Express.js backend (REST API + JWT auth)
 ├── frontend/ # Vue.js frontend (UI + Map integration)
 └── README.md # You're here
 ```
-
----
 
 ## 📂 Backend Setup
 
@@ -43,8 +39,6 @@ Run the server:
 npm run dev
 ```
 
----
-
 ## 📮 API Endpoints
 
 ### Auth
@@ -67,8 +61,6 @@ POST    /api/stations/create         (protected)
 PUT     /api/stations/update/:id     (protected)
 DELETE  /api/stations/delete/:id     (protected)
 ```
-
----
 
 ## 🧑‍💻 Author
 
