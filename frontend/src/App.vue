@@ -1,30 +1,41 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
+    <div id="app" class="max-w-5xl mx-auto">
+        <header class="py-6 flex justify-between items-center">
+            <h1 class="text-xl font-semibold">⚡ Charging Station Manager</h1>
+            <nav v-if="authState.isLoggedIn" class="space-x-6">
+                <router-link
+                    to="/chargers"
+                    class="hover:underline underline-offset-4"
+                    >Chargers</router-link
+                >
+                <router-link
+                    to="/profile"
+                    class="hover:underline underline-offset-4"
+                    >Profile</router-link
+                >
+                <button
+                    class="bg-red-500 text-white px-4 py-1.5 cursor-pointer hover:shadow-lg"
+                    @click="logout"
+                >
+                    Logout
+                </button>
+            </nav>
+        </header>
+
+        <main>
+            <router-view />
+        </main>
+    </div>
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+<script setup>
+import { useRouter } from "vue-router";
+import { authState, logout as doLogout } from "./stores/auth";
+
+const router = useRouter();
+
+function logout() {
+    doLogout();
+    router.push("/");
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
+</script>
