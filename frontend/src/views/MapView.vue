@@ -31,7 +31,8 @@ onMounted(async () => {
       <h1><b>${station.name}</b></h1><br>
       <b>Status:</b> ${station.status}<br>
       <b>Output:</b> ${station.powerOutput} kW<br>
-      <b>Connector:</b> ${station.connectorType}
+      <b>Connector:</b> ${station.connectorType}<br>
+      <b>Creator:</b> @${station.createdBy.username}<br>
     `);
         if (station.status === "active") {
             marker.setIcon(
