@@ -1,7 +1,7 @@
 <template>
     <div>
         <h2 class="text-lg font-semibold my-4">Charging Stations Map</h2>
-        <div id="map" class="w-full h-[600px]"></div>
+        <div id="map" class="w-full h-[600px] z-20"></div>
     </div>
 </template>
 
