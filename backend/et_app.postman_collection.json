@@ -3,7 +3,8 @@
 		"_postman_id": "6742cfda-7334-4e49-affa-16c6e71c938e",
 		"name": "et_app",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "24499138"
+		"_exporter_id": "24499138",
+		"_collection_link": "https://personal-team-0393.postman.co/workspace/957c271d-8498-44a9-89b4-73344dd9bb0c/collection/24499138-6742cfda-7334-4e49-affa-16c6e71c938e?action=share&source=collection_link&creator=24499138"
 	},
 	"item": [
 		{
@@ -75,7 +76,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4Mzk2MDk0YTJjMjZlZDA1YmQ5NDhkMiIsImlhdCI6MTc0ODU5MTU0MywiZXhwIjoxNzQ5MTk2MzQzfQ.nMHmjG-YP-n35Vy9fv7mjQFVwO5SRqOGCMTD3SdU9l8",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4Mzk2MDk0YTJjMjZlZDA1YmQ5NDhkMiIsImlhdCI6MTc0ODc5NDM4MSwiZXhwIjoxNzQ5Mzk5MTgxfQ.idb7X5iH2jAPii55Q92n9o36zxxbh7Xwazh2znyOEK0",
 							"type": "string"
 						}
 					]
@@ -127,7 +128,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4Mzk2MDk0YTJjMjZlZDA1YmQ5NDhkMiIsImlhdCI6MTc0ODU5MTU0MywiZXhwIjoxNzQ5MTk2MzQzfQ.nMHmjG-YP-n35Vy9fv7mjQFVwO5SRqOGCMTD3SdU9l8",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4Mzk2MDk0YTJjMjZlZDA1YmQ5NDhkMiIsImlhdCI6MTc0ODc5NDM4MSwiZXhwIjoxNzQ5Mzk5MTgxfQ.idb7X5iH2jAPii55Q92n9o36zxxbh7Xwazh2znyOEK0",
 							"type": "string"
 						}
 					]
@@ -136,7 +137,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"name\": \"Station 1\", \"location\":{\"lat\": 28.638686, \"lng\": 77.071730},\"status\": \"active\",\"powerOutput\": 200,\"connectorType\": \"Type2\"}",
+					"raw": "{\"name\": \"Station 2\", \"location\":{\"lat\": 28.638686, \"lng\": 77.071730},\"status\": \"active\",\"powerOutput\": 200,\"connectorType\": \"Type2\"}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -166,7 +167,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4Mzk2MDk0YTJjMjZlZDA1YmQ5NDhkMiIsImlhdCI6MTc0ODU5MTU0MywiZXhwIjoxNzQ5MTk2MzQzfQ.nMHmjG-YP-n35Vy9fv7mjQFVwO5SRqOGCMTD3SdU9l8",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4Mzk2MDk0YTJjMjZlZDA1YmQ5NDhkMiIsImlhdCI6MTc0ODc5NDM4MSwiZXhwIjoxNzQ5Mzk5MTgxfQ.idb7X5iH2jAPii55Q92n9o36zxxbh7Xwazh2znyOEK0",
 							"type": "string"
 						}
 					]
@@ -175,7 +176,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"name\": \"Station 0\", \"location\":{\"lat\": 28.638686, \"lng\": 77.071730},\"status\": \"inactive\",\"powerOutput\": 200,\"connectorType\": \"Type2\"}",
+					"raw": "{\"name\": \"Station 1\", \"location\":{\"lat\": 28.638686, \"lng\": 77.071730},\"status\": \"inactive\",\"powerOutput\": 200,\"connectorType\": \"Type2\"}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -183,7 +184,7 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:5000/api/stations/update/68396b6ea97e6a287e503c7d",
+					"raw": "localhost:5000/api/stations/683c0b50191fa1dcc089a0c5",
 					"host": [
 						"localhost"
 					],
@@ -191,8 +192,7 @@
 					"path": [
 						"api",
 						"stations",
-						"update",
-						"68396b6ea97e6a287e503c7d"
+						"683c0b50191fa1dcc089a0c5"
 					]
 				}
 			},
@@ -206,7 +206,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4Mzk2MDk0YTJjMjZlZDA1YmQ5NDhkMiIsImlhdCI6MTc0ODU5MTU0MywiZXhwIjoxNzQ5MTk2MzQzfQ.nMHmjG-YP-n35Vy9fv7mjQFVwO5SRqOGCMTD3SdU9l8",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4Mzk2MDk0YTJjMjZlZDA1YmQ5NDhkMiIsImlhdCI6MTc0ODc5NDM4MSwiZXhwIjoxNzQ5Mzk5MTgxfQ.idb7X5iH2jAPii55Q92n9o36zxxbh7Xwazh2znyOEK0",
 							"type": "string"
 						}
 					]
@@ -214,7 +214,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "localhost:5000/api/stations/delete/68396b6ea97e6a287e503c7d",
+					"raw": "localhost:5000/api/stations/683c0b50191fa1dcc089a0c5",
 					"host": [
 						"localhost"
 					],
@@ -222,8 +222,27 @@
 					"path": [
 						"api",
 						"stations",
-						"delete",
-						"68396b6ea97e6a287e503c7d"
+						"683c0b50191fa1dcc089a0c5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Station by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/api/stations/683c0b50191fa1dcc089a0c5",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"stations",
+						"683c0b50191fa1dcc089a0c5"
 					]
 				}
 			},
