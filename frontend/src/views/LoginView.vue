@@ -1,6 +1,6 @@
 <template>
     <div class="space-y-2 text-center my-24">
-        <h2 class="text-center text-xl font-semibold">Login to your account</h2>
+        <h2 class="text-xl font-semibold">Login to your account</h2>
 
         <p class="text-gray-600">
             Enter your email below to login to your account
@@ -16,7 +16,8 @@
                     id="email"
                     type="email"
                     placeholder="email@example.com"
-                    class="border-2 border-gray-400 rounded-md p-2 w-96 focus:border-blue-500 focus:ring-blue-500"
+                    required
+                    class="border-2 border-gray-300 rounded-md p-2 w-96 transition-colors focus:border-blue-500 focus:ring-blue-500"
                 />
             </div>
             <div class="flex flex-col gap-1 items-start">
@@ -28,16 +29,17 @@
                     id="password"
                     type="password"
                     placeholder="******"
-                    class="border-2 border-gray-400 rounded-md p-2 w-96 focus:border-blue-500 focus:ring-blue-500"
+                    required
+                    class="border-2 border-gray-300 rounded-md p-2 w-96 transition-colors focus:border-blue-500 focus:ring-blue-500"
                 />
             </div>
             <button
-                class="bg-black text-white w-96 px-4 py-2 rounded-md cursor-pointer"
+                class="bg-black text-white w-96 px-4 py-2 rounded-md hover:bg-gray-800 transition-colors cursor-pointer"
             >
                 Login
             </button>
         </form>
-        <p v-if="error">{{ error }}</p>
+        <p v-if="error" class="text-red-500">{{ error }}</p>
         <p class="text-sm">
             Don't have an account?
             <router-link to="/register" class="underline underline-offset-4"
@@ -51,6 +53,11 @@
 import { ref } from "vue";
 import { login } from "../services/auth";
 import { useRouter } from "vue-router";
+import { getToken } from "../stores/auth";
+
+if (getToken()) {
+    router.push("/chargers");
+}
 
 const email = ref("");
 const password = ref("");

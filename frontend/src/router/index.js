@@ -3,6 +3,8 @@ import LoginView from "../views/LoginView.vue";
 import RegisterView from "../views/RegisterView.vue";
 import ChargersView from "../views/ChargersView.vue";
 import ProfileView from "../views/ProfileView.vue";
+import CreateView from "../views/CreateView.vue";
+import UpdateView from "../views/UpdateView.vue";
 import { getToken } from "../stores/auth";
 
 const routes = [
@@ -20,6 +22,16 @@ const routes = [
   {
     path: "/profile",
     component: ProfileView,
+    meta: { requiresAuth: true },
+  },
+  {
+    path: "/create",
+    component: CreateView,
+    meta: { requiresAuth: true },
+  },
+  {
+    path: "/update/:id",
+    component: UpdateView,
     meta: { requiresAuth: true },
   },
 ];
