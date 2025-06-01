@@ -8,7 +8,10 @@ dotenv.config();
 const authRoutes = require("./routes/auth");
 const stationRoutes = require("./routes/stations");
 
-const allowedOrigins = [process.env.CLIENT_URL, "http://locahost:5173"];
+const allowedOrigins = [
+  "https://et-app-omega.vercel.app",
+  "http://locahost:5173",
+];
 
 const app = express();
 
