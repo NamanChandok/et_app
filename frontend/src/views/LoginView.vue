@@ -1,5 +1,5 @@
 <template>
-    <div class="space-y-2 text-center my-24">
+    <div class="space-y-2 text-center my-12 md:my-24">
         <h2 class="text-xl font-semibold">Login to your account</h2>
 
         <p class="text-gray-600">
