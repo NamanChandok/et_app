@@ -9,6 +9,11 @@ A full-stack application to manage EV charging stations using **Node.js**, **Exp
 └── README.md # You're here
 ```
 
+## 🚀 Deployed Links
+
+- [Backend hosted on render](https://ev-backend-dewj.onrender.com)
+- [Frontend hosted on vercel](https://et-app-omega.vercel.app/)
+
 ## 📂 Backend Setup
 
 ```bash
@@ -28,9 +33,6 @@ JWT_EXPIRES_IN=7d
 
 # Server Configuration
 PORT=5000
-
-# CORS Configuration
-CLIENT_URL=http://localhost:5173
 ```
 
 Run the server:
