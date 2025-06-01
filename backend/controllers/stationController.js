@@ -24,6 +24,37 @@ const getStations = async (req, res) => {
   }
 };
 
+// @desc    Get station by ID
+// @route   GET /api/stations/:id
+// @access  Public
+const getStationById = async (req, res) => {
+  try {
+    const station = await Station.findById(req.params.id).populate(
+      "createdBy",
+      "username email",
+    );
+
+    if (!station) {
+      return res.status(404).json({
+        success: false,
+        message: "Station not found",
+      });
+    }
+
+    res.json({
+      success: true,
+      data: station,
+    });
+  } catch (error) {
+    console.error("Get station by ID error:", error);
+    res.status(500).json({
+      success: false,
+      message: "Failed to get station by ID",
+      error: error.message,
+    });
+  }
+};
+
 // @desc    Create new station
 // @route   POST /api/stations
 // @access  Private
@@ -152,6 +183,7 @@ const getStationsByUser = async (userId) => {
 
 module.exports = {
   getStations,
+  getStationById,
   createStation,
   updateStation,
   deleteStation,
