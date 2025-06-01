@@ -10,7 +10,7 @@ const stationRoutes = require("./routes/stations");
 
 const allowedOrigins = [
   "https://et-app-omega.vercel.app",
-  "http://locahost:5173",
+  "http://localhost:5173",
 ];
 
 const app = express();
