@@ -28,6 +28,11 @@
                     >Chargers</router-link
                 >
                 <router-link
+                    to="/map"
+                    class="hover:underline underline-offset-4"
+                    >Map View</router-link
+                >
+                <router-link
                     to="/profile"
                     class="hover:underline underline-offset-4"
                     >Profile</router-link

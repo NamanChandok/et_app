@@ -5,6 +5,7 @@ import ChargersView from "../views/ChargersView.vue";
 import ProfileView from "../views/ProfileView.vue";
 import CreateView from "../views/CreateView.vue";
 import UpdateView from "../views/UpdateView.vue";
+import MapView from "../views/MapView.vue";
 import { getToken } from "../stores/auth";
 
 const routes = [
@@ -32,6 +33,11 @@ const routes = [
   {
     path: "/update/:id",
     component: UpdateView,
+    meta: { requiresAuth: true },
+  },
+  {
+    path: "/map",
+    component: MapView,
     meta: { requiresAuth: true },
   },
 ];
