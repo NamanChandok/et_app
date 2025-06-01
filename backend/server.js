@@ -49,12 +49,16 @@ app.get("/api/health", (req, res) => {
 });
 
 app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).json({
-    success: false,
-    message: "Something went wrong!",
-    error: err.message,
-  });
+  try {
+    next();
+  } catch (err) {
+    console.error(err.stack);
+    res.status(500).json({
+      success: false,
+      message: "Something went wrong!",
+      error: err.message,
+    });
+  }
 });
 
 app.use((req, res) => {
