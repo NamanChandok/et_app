@@ -6,7 +6,7 @@ import ProfileView from "../views/ProfileView.vue";
 import CreateView from "../views/CreateView.vue";
 import UpdateView from "../views/UpdateView.vue";
 import MapView from "../views/MapView.vue";
-import { getToken } from "../stores/auth";
+import { authState } from "../stores/auth";
 
 const routes = [
   { path: "/", component: LoginView },
@@ -48,10 +48,12 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  if (to.meta.requiresAuth && !getToken()) {
+  if (to.meta.requiresAuth && !authState.isLoggedIn) {
     next("/");
+  } else if (!to.meta.requiresAuth && authState.isLoggedIn) {
+    next("/chargers");
   } else {
-    next("");
+    next();
   }
 });
 

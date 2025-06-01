@@ -22,6 +22,7 @@
                 Charging Station Manager
             </h1>
             <button
+                v-if="authState.isLoggedIn"
                 class="fixed md:hidden top-6 right-4 z-50 cursor-pointer"
                 @click="navOpen = !navOpen"
             >
