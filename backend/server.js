@@ -8,6 +8,8 @@ dotenv.config();
 const authRoutes = require("./routes/auth");
 const stationRoutes = require("./routes/stations");
 
+const allowedOrigins = [process.env.CLIENT_URL, "http://locahost:5173"];
+
 const app = express();
 
 mongoose
@@ -20,7 +22,13 @@ mongoose
 
 app.use(
   cors({
-    origin: process.env.CLIENT_URL || "http://localhost:5173",
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
     credentials: true,
   }),
 );
