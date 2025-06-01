@@ -51,7 +51,7 @@ router.beforeEach((to, from, next) => {
   if (to.meta.requiresAuth && !getToken()) {
     next("/");
   } else {
-    next("/chargers");
+    next("");
   }
 });
 
