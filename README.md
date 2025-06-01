@@ -11,7 +11,7 @@ A full-stack application to manage EV charging stations using **Node.js**, **Exp
 
 ## 🚀 Deployed Links
 
-- Backend hosted on render - https://ev-backend-dewj.onrender.com
+- Backend hosted on render - https://ev-backend-dewj.onrender.com/api
 - Frontend hosted on vercel - https://et-app-omega.vercel.app/
 - Postman collection for backend apis - [Postman Collection Json](https://github.com/namanchandok/et_app/blob/main/backend/et_app.postman_collection.json)
 
