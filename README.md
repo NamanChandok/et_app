@@ -39,27 +39,56 @@ Run the server:
 npm run dev
 ```
 
+The API will be available at: http://localhost:5000/api
+
+## 🚀 Frontend Setup
+
+```bash
+cd frontend
+npm install
+```
+
+Create a .env file:
+
+```bash
+VITE_API_BASE_URL=http://localhost:5000/api
+```
+
+Run the development server:
+
+```bash
+npm run dev
+```
+
+The frontend will be available at: http://localhost:5173
+
+### Routes
+
+- `/` - Login page
+- `/register` - Register page
+- `/chargers` - List of all charging stations
+- `/create` - Create a new charging station
+- `/update/:id` - Edit an existing charging station
+- `/profile` - User profile
+
 ## 📮 API Endpoints
 
 ### Auth
 
 ```bash
-Copy
-Edit
 POST    /api/auth/register
 POST    /api/auth/login
-GET    /api/auth/profile
+GET     /api/auth/profile
 ```
 
 ### Charging Stations
 
 ```bash
-Copy
-Edit
-GET     /api/stations
-POST    /api/stations/create         (protected)
-PUT     /api/stations/update/:id     (protected)
-DELETE  /api/stations/delete/:id     (protected)
+GET     /api/stations              # Get all stations
+GET     /api/stations/:id          # Get single station
+POST    /api/stations/create       # Create station (protected)
+PUT     /api/stations/:id          # Update station (protected)
+DELETE  /api/stations/:id          # Delete station (protected)
 ```
 
 ## 🧑‍💻 Author
