@@ -77,8 +77,8 @@ async function deleteStation() {
                 {{ station.status }}</span
             >
             <svg
-                class="w-4 h-4 transition-transform duration-300 ease-in-out"
-                :class="{ 'transform rotate-45': isOpen }"
+                class="w-4 h-4 transition-transform"
+                :class="{ 'transform rotate-180': isOpen }"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -91,7 +91,7 @@ async function deleteStation() {
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     stroke-width="2"
-                    d="M5 12h14m-7 7V5"
+                    d="m19 9-7 7-7-7"
                 />
             </svg>
         </div>

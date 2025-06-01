@@ -51,14 +51,59 @@
                 </button>
             </span>
         </div>
+        <div class="mt-4 flex flex-wrap gap-3">
+            <div>
+                <select
+                    v-model="filters.status"
+                    class="border border-gray-300 rounded-md px-3 py-1 text-sm focus:outline-none"
+                >
+                    <option value="">All Statuses</option>
+                    <option value="active">Active</option>
+                    <option value="inactive">Inactive</option>
+                </select>
+            </div>
+
+            <div>
+                <select
+                    v-model="filters.connectorType"
+                    class="border border-gray-300 rounded-md px-3 py-1 text-sm focus:outline-none"
+                >
+                    <option value="">All Connector Types</option>
+                    <option value="CCS">CCS</option>
+                    <option value="CHAdeMO">CHAdeMO</option>
+                    <option value="Type2">Type 2</option>
+                    <option value="Tesla">Tesla</option>
+                </select>
+            </div>
+
+            <div>
+                <select
+                    v-model="filters.powerOutput"
+                    class="border border-gray-300 rounded-md px-3 py-1 text-sm focus:outline-none"
+                >
+                    <option value="">All Power Outputs</option>
+                    <option value="slow">Slow (< 7kW)</option>
+                    <option value="fast">Fast (7-22kW)</option>
+                    <option value="rapid">Rapid (22-50kW)</option>
+                    <option value="ultra_rapid">Ultra Rapid (> 100kW)</option>
+                </select>
+            </div>
+
+            <button
+                @click="resetFilters"
+                class="border border-gray-300 rounded-md px-3 py-1 text-sm hover:bg-gray-100 transition-colors cursor-pointer"
+            >
+                Reset Filters
+            </button>
+        </div>
 
         <div class="mt-4">
-            <div v-if="stations.length === 0" class="text-center">
+            <div v-if="filteredStations.length === 0" class="text-center">
                 No chargers found.
             </div>
             <div v-else>
                 <Charger
-                    v-for="station in stations"
+                    v-for="station in filteredStations"
                     :key="station._id"
                     :station="station"
                     :is-open="openStationId === station._id"
@@ -70,7 +115,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, computed } from "vue";
 import { apiFetch } from "../services/api";
 import Charger from "../components/Charger.vue";
 
@@ -95,4 +140,57 @@ function toggleStation(stationId) {
 }
 
 onMounted(fetchStations);
+
+const filters = ref({
+    status: "",
+    connectorType: "",
+    powerOutput: "",
+});
+
+function resetFilters() {
+    filters.value = {
+        status: "",
+        connectorType: "",
+        powerOutput: "",
+    };
+}
+
+const filteredStations = computed(() => {
+    return stations.value.filter((station) => {
+        if (filters.value.status && station.status !== filters.value.status) {
+            return false;
+        }
+        if (
+            filters.value.connectorType &&
+            station.connectorType !== filters.value.connectorType
+        ) {
+            return false;
+        }
+
+        if (filters.value.powerOutput) {
+            const powerOutput = station.powerOutput || 0;
+
+            if (filters.value.powerOutput === "slow" && powerOutput >= 7) {
+                return false;
+            } else if (
+                filters.value.powerOutput === "fast" &&
+                (powerOutput < 7 || powerOutput > 22)
+            ) {
+                return false;
+            } else if (
+                filters.value.powerOutput === "rapid" &&
+                (powerOutput < 22 || powerOutput > 100)
+            ) {
+                return false;
+            } else if (
+                filters.value.powerOutput === "ultra_rapid" &&
+                powerOutput <= 100
+            ) {
+                return false;
+            }
+        }
+
+        return true;
+    });
+});
 </script>
