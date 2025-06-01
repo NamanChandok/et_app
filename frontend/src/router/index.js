@@ -51,15 +51,7 @@ router.beforeEach((to, from, next) => {
   if (to.meta.requiresAuth && !getToken()) {
     next("/");
   } else {
-    next();
-  }
-});
-
-router.beforeEach((to, from, next) => {
-  if (to.path === "/" && getToken()) {
     next("/chargers");
-  } else {
-    next();
   }
 });
 
